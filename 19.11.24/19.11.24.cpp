@@ -107,4 +107,11 @@ int main()
 	obj2.Print();
 	obj2.Eat();
 	obj2.Sound();
+	cout << endl << endl;
+
+	Dog obj3;
+	obj3.Input();
+	obj3.Print();
+	obj3.Eat();
+	obj3.Sound();
 }
