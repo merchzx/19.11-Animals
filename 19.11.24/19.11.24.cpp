@@ -34,12 +34,8 @@ public:
 	void Print() {
 		cout << "Name - " << name << endl << "Spacies - " << spacies << endl << "Weight - " << weight << endl << "Continent - " << continent << endl;
 	}
-	void Eat() {
-		cout << "-";
-	}
-	void Sound() {
-		cout << "-";
-	}
+	virtual void Eat() = 0;
+	virtual void Sound() = 0;
 };
 
 class Elephant :public Animal {
@@ -110,8 +106,46 @@ int main()
 	cout << endl << endl;
 
 	Dog obj3;
-	obj3.Input();
 	obj3.Print();
 	obj3.Eat();
 	obj3.Sound();
+	
+
+	Animal * obj;
+	int choose = 0;
+	cout << "Enter what Animal u want to input " << endl << 
+		"1 - Dog" << endl << "2 - Elephant" <<endl<< 
+		"3 - Cat" << endl << "4 - Parrot"<<endl;
+	cin >> choose;
+	switch (choose)
+	{
+		case(1): 
+		{
+			obj = new Dog;
+			obj->Input();
+			obj->Print();
+			break;
+		}
+		case(2):
+		{
+			obj = new Elephant;
+			obj->Input();
+			obj->Print();
+			break;
+		}
+		case(3):
+		{
+			obj = new Cat;
+			obj->Input();
+			obj->Print();
+			break;
+		}
+		case(4):
+		{
+			obj = new Parrot;
+			obj->Input();
+			obj->Print();
+			break;
+		}
+	}
 }
